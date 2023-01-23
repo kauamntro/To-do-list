@@ -1,0 +1,53 @@
+
+<html lang="en">
+    <head>
+    <title>To-Do List</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width-device-width, inital-scale=1.0"/>
+    <link href="style.css" rel="stylesheet">
+    <script
+      src="https://kit.fontawesome.com/7f335cf7b9.js"
+      crossorigin="anonymous"
+    ></script>
+    </head>
+    <body>
+        <div class="conteudo">
+            <div class="topo">
+                <input type="text" 
+                id="inputNovaTarefa"
+                placeholder="Adicione uma nova Tarefa"
+                >
+                <button id="btnAddTarefa">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </div>
+
+            <ul id="listaTarefas">
+            </ul>
+        </div>
+        <div id="janelaEdicaoFundo">
+        </div>
+        <div id="janelaEdicao">
+            <button id="janelaEdicaoBtnFechar">
+                <i class="fa fa-remove fa-2x"></i>
+            </button>
+            <h2 id="idTarefaEdição"></h2>
+            <hr>
+            <form>
+                <div class="frm-linha">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="inputTarefaNomeEdicao">
+                </div>
+                <div class="frm-linha">
+                    <button id="btnAtualizar">
+                        Salvar
+                    </button>
+                </div>
+            </form>
+        </div>
+        <div id="janelaAviso">
+            <h2>Você precisa escrever algo!</h2>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>

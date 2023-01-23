@@ -1,0 +1,246 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #262626;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+::-webkit-scrollbar{
+    width: 20px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: rgba(0, 0, 0, 0.363);
+    border: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #4b4b4b;
+}
+
+.conteudo{
+    margin: auto;
+    margin-top: 50px;
+
+    background-color: #4b4b4b;
+    width: 500px;
+    height: 450px;
+    padding: 38px;
+    border: none;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    overflow-x: hidden;
+}
+
+.topo{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+}
+
+.topo input{
+    width: 380px;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: #262626;
+    border: 1px solid #262626;
+    outline: none;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.topo button{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    transition: .6s;
+}
+
+.topo button:active ~ #janelaAviso.aparecer{
+    display: flex !important;
+}
+
+#listaTarefas{
+    width: 100%;
+    list-style: none;
+}
+
+#listaTarefas li{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-radius: 12px;
+    margin: auto;
+    background-color: #262626;
+    margin-top: 20px;
+} 
+
+.btnAcao{
+    width: 30px;
+    height: 30px;
+    border-radius: 60px;
+    border: none;
+    outline: none;
+    margin-right: 10px;
+    transition: .6s;
+}
+
+.btnAcao:hover , .topo button:hover{
+    transition: .2s;
+    color: white;
+    background-color: black;
+}
+
+.textoTarefa{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 290px;
+    white-space: nowrap;
+}
+
+.topo input:focus{
+    border: 1px solid rgb(206, 206, 206);
+}
+
+#janelaAviso{
+    background-color: black;
+    width: 19%;
+    padding: 20px;
+    border-radius: 20px;
+    color: tomato;
+    transition: .2s;
+    margin-left: -22%;
+    margin-top: -10%;
+    top: 0;
+    display: none;
+}
+
+#janelaAviso.abrir{
+    display: block !important;
+    position: relative;
+    animation-duration: 4s;
+    animation-name: avisoApareceu;
+}
+
+#janelaEdicaoFundo{
+    position: fixed;
+    top: 0;
+    background-color: black;
+    bottom: 0;
+    left: 0;
+    opacity: 0.6;
+    z-index: 100;
+    right: 0;
+    display: none;
+}
+
+#janelaEdicaoFundo.abrir{
+    display: block !important;
+}
+
+#janelaEdicao{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    background-color: #262626;
+    width: 350px;
+    height: 200px;
+    padding: 28px;
+    border-radius: 12px;
+    display: none;
+    z-index: 200;
+}
+
+#janelaEdicao.abrir{
+    display: block !important;
+}
+
+.frm-linha{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.frm-linha input{
+    padding: 10px;
+    border-radius: 12px;  
+    border: 1px solid #4b4b4b;
+    outline: transparent;
+    font-size: 1.2rem;
+    background-color: #4b4b4b;
+    color: white;
+}
+
+.frm-linha input:focus{
+    border: 1px solid rgba(185, 218, 214, 0.459);
+}
+
+.frm-linha button{
+    width: 100px;
+    height: 50px;
+    margin: auto;
+    background-color: #4b4b4b;
+    border: none;
+    outline: none;
+    border-radius: 30px;
+    color: antiquewhite;
+    opacity: 0.8;
+    transition: .2s;
+}
+
+.frm-linha button:hover{
+    transition: .2s;
+    opacity: 1;
+}
+
+#janelaEdicaoBtnFechar{
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    border: none;
+    outline: none;
+    transition: .6s;
+    position: fixed;
+    top: -8%;
+    right: -3%;
+    opacity: 0.9;
+    transition: .2s;
+}
+
+#janelaEdicaoBtnFechar:hover{
+    transition: .2s;
+    opacity: 1;
+}
+
+@keyframes avisoApareceu{
+    0%{
+        left: 0;
+    }
+    50%{
+        left: 25%;
+    }
+    100%{
+        left: 0;
+    }
+}
